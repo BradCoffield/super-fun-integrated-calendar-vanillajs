@@ -5,22 +5,26 @@ document.addEventListener("DOMContentLoaded", function() {
   // Tingle modal - generic generator code
   var modal = new tingle.modal({
     footer: true,
-    stickyFooter: true,
-    closeMethods: ['overlay', 'button', 'escape'],
-    closeLabel: "Close",
-    cssClass: ['custom-class-1', 'custom-class-2'],
-    onOpen: function() {
-        console.log('modal open');
-    },
-    onClose: function() {
-        console.log('modal closed');
-    },
+    // stickyFooter: true,
+    // closeMethods: ['overlay', 'button', 'escape'],
+    // closeLabel: "Close",
+    // cssClass: ['custom-class-1', 'custom-class-2'],
+    // onOpen: function() {
+    //     console.log('modal open');
+    // },
+    // onClose: function() {
+    //     console.log('modal closed');
+    // },
     // beforeClose: function() {
     //     // here's goes some logic
     //     // e.g. save content before closing the modal
     //     return true; // close the modal
     //     return false; // nothing happens
     // }
+});
+// Creating a close button for any modal we create. Button text, css classes, logic on-click.
+modal.addFooterBtn('Close', 'tingle-btn tingle-btn--primary tingle-btn--pull-right', function() {
+  modal.close();
 });
 
 
@@ -29,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var calendar = new FullCalendar.Calendar(calendarEl, {
     plugins: ["dayGrid", "googleCalendar"],
     googleCalendarApiKey: "AIzaSyAm6_e7XOpN1lB0cSUA3Ij8vsPdHAfznoU",
+    /* this is where we put all the source calendars information, as a series of objects */
     eventSources: [
       {
         googleCalendarId: "genre2mag@gmail.com",
@@ -41,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
       center: "title",
       right: "dayGridMonth,dayGridWeek,dayGridDay"
     },
+    /* What happens when someone clicks a particular event. In this case, open a modal with additional information about the event. */
     eventClick: function(info) {
         console.log(info.event)
       let theLocation, theDescription, theTitle;
@@ -49,10 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
      if (info.event.extendedProps.description) {theDescription = info.event.extendedProps.description} else {theDescription = ""}
      let theURL = info.event.url;
       modal.setContent(`<h3>${info.event.title}</h3><p>${theLocation}</p><p>${theDescription}</p><p><a href="${theURL}" target="_blank">More Information</a></p>`);    
-      modal.addFooterBtn('Button label', 'tingle-btn tingle-btn--primary', function() {
-        // here goes some logic
-        modal.close();
-    });
+      
       modal.open();
       // alert(info.event.title);
       info.jsEvent.preventDefault();

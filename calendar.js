@@ -19,13 +19,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
   var calendar = new FullCalendar.Calendar(calendarEl, {
     plugins: ["dayGrid", "googleCalendar", "list"],
-    googleCalendarApiKey: "AIzaSyCRpLxi39iacpmz2vVPYHcs_H0BPfdems8",
+    googleCalendarApiKey: "AIzaSyCqfo0l4nCGE2FLGgnXxKDv6SJVPLund4Q",
     // googleCalendarApiKey: "AIzaSyAm6_e7XOpN1lB0cSUA3Ij8vsPdHAfznoU", //g2
     /* this is where we put all the source calendars information, as a series of objects */
     eventSources: [
       {
         googleCalendarId: "rocky.edu_sakv6bmfg59lf2dp3a8ogj1608@group.calendar.google.com",
         className: "rmc-student-events"
+      },
+      {
+        googleCalendarId:"rocky.edu_2gbenc7go3t1k90k0m3utq7g4o@group.calendar.google.com",
+        className: "rmc-master-calendar"
+      },
+      {
+        googleCalendarId:"rocky.edu_87pj63gjv6cri8t2glk5aa0t5o@group.calendar.google.com",
+        className:"rmc-alumni-events"
       }
     ],
     defaultView: "dayGridMonth",

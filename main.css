@@ -14,4 +14,12 @@
     text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
   } */
 
- 
+ .rmc-student-events {
+   background:green;
+ }
+ .rmc-master-calendar {
+   background: brown;
+ }
+ .rmc-alumni-events {
+   background: teal;    
+ }

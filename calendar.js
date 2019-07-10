@@ -65,11 +65,23 @@ document.addEventListener("DOMContentLoaded", function() {
       if ($("#rmc-student-events").is(":checked")) {
         desiredViews.push("rmc-student-events");
       }
+      if ($("#rmc-master-calendar").is(":checked")) {
+        desiredViews.push("rmc-master-calendar");
+      }
+      if ($("#rmc-alumni-events").is(":checked")) {
+        desiredViews.push("rmc-alumni-events");
+      }
 
-      console.log(info.event.start);
-      console.log(info.event.end);
-      console.log("desiredviews", desiredViews[0]);
-      if (info.el.className.includes(desiredViews[0])) return false;
+      // console.log(info.el.className);
+      let theClassNames = info.el.className;
+      // console.log(theClassNames);
+      const found = desiredViews.some(r=> theClassNames.includes(r))
+      console.log(found);
+      return found
+      // const found = info.el.className.some(r=> desiredViews.includes(r))
+      // console.log(found);
+      // if (info.el.classname.some(r=> desiredViews.includes(r))) {return true} else return false
+      // if (info.el.className.includes(desiredViews[0])) return false;
     },
     /* What happens when someone clicks a particular event. In this case, open a modal with additional information about the event. */
     eventClick: function(info) {

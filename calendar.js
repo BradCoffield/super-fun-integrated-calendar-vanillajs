@@ -38,8 +38,8 @@ document.addEventListener("DOMContentLoaded", function() {
     ],
     defaultView: "dayGridMonth",
     header: {
-      left: "title,prev,next,today",
-      center: "",
+      left: "prev,next,today",
+      center: "title",
       right: "dayGridMonth,dayGridWeek,dayGridDay,listMonth"
     },
     // TRYING CHECKBOX THINGS

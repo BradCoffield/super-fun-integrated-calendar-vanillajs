@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,30 +10,55 @@
     <link rel="stylesheet" href="https://unpkg.com/@fullcalendar/daygrid/main.min.css">
     <link rel="stylesheet" href="https://unpkg.com/@fullcalendar/list/main.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.15.1/tingle.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="/main.css">
 </head>
-<body>
-   hi
-<input id="rmc-student-events" class="event_filter_box" name="event_filter_select"  type="checkbox" value="rmc-student-events"   checked>rmc-student-events  </input>
-<input id="rmc-master-calendar" class="event_filter_box" name="event_filter_select" type="checkbox" value="rmc-master-calendar"  checked>rmc-master-calendar</input>
-<input id="rmc-alumni-events" class="event_filter_box" name="event_filter_select" type="checkbox" value="rmc-alumni-events"  checked>rmc-alumni-events</input>
 
+<body>
+<h1 style="margin-bottom:24px;">Integrated Calendar</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"> 
+                <h3>Available Calendars</h3>
+                    <div id="rmc-master-calendar-div">
+                            <input id="rmc-master-calendar" class="event_filter_box" name="event_filter_select" type="checkbox"
+                                value="rmc-master-calendar" checked> RMC MASTER CALENDAR</input>
+                        </div>
+               
+               
+               
+                <div id="rmc-student-events-div">
+                    <input id="rmc-student-events" class="event_filter_box" name="event_filter_select" type="checkbox"
+                    value="rmc-student-events" checked> STUDENT EVENTS</input>
+                </div>
+           
+            <div id="rmc-alumni-events-div">
+                <input id="rmc-alumni-events" class="event_filter_box" name="event_filter_select" type="checkbox"
+                    value="rmc-alumni-events" checked> ALUMNI EVENTS</input>
+            
+            </div></div>
+            <div class="col-md-9">    <div id="calendar"></div></div>
+        </div>
+    </div>
+
+
+   
     <!-- <button id="g2-toggle">g2 toggle</button> -->
-    <div id="calendar"></div>
-     
-    <script
-			  src="https://code.jquery.com/jquery-3.4.1.min.js"
-			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-			  crossorigin="anonymous"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
     <script src="https://unpkg.com/@fullcalendar/core/main.min.js"></script>
     <script src="https://unpkg.com/@fullcalendar/daygrid/main.min.js"></script>
     <script src="https://unpkg.com/@fullcalendar/google-calendar/main.min.js"></script>
     <script src="https://unpkg.com/@fullcalendar/list/main.min.js"></script>
-    
-   
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.15.1/tingle.min.js"></script>
 
     <script src="calendar.js"></script>
 </body>
+
 </html>

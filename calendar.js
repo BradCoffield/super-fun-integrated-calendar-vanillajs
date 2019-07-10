@@ -19,11 +19,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
   var calendar = new FullCalendar.Calendar(calendarEl, {
     plugins: ["dayGrid", "googleCalendar", "list"],
-    googleCalendarApiKey: "AIzaSyAm6_e7XOpN1lB0cSUA3Ij8vsPdHAfznoU",
+    googleCalendarApiKey: "AIzaSyCRpLxi39iacpmz2vVPYHcs_H0BPfdems8",
+    // googleCalendarApiKey: "AIzaSyAm6_e7XOpN1lB0cSUA3Ij8vsPdHAfznoU", //g2
     /* this is where we put all the source calendars information, as a series of objects */
     eventSources: [
       {
-        googleCalendarId: "genre2mag@gmail.com",
+        googleCalendarId: "rocky.edu_sakv6bmfg59lf2dp3a8ogj1608@group.calendar.google.com",
         className: "rmc-student-events"
       }
     ],

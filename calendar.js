@@ -24,23 +24,26 @@ document.addEventListener("DOMContentLoaded", function() {
     /* this is where we put all the source calendars information, as a series of objects */
     eventSources: [
       {
-        googleCalendarId: "rocky.edu_sakv6bmfg59lf2dp3a8ogj1608@group.calendar.google.com",
+        googleCalendarId:
+          "rocky.edu_sakv6bmfg59lf2dp3a8ogj1608@group.calendar.google.com",
         className: "rmc-student-events"
       },
       {
-        googleCalendarId:"rocky.edu_2gbenc7go3t1k90k0m3utq7g4o@group.calendar.google.com",
+        googleCalendarId:
+          "rocky.edu_2gbenc7go3t1k90k0m3utq7g4o@group.calendar.google.com",
         className: "rmc-master-calendar"
       },
       {
-        googleCalendarId:"rocky.edu_87pj63gjv6cri8t2glk5aa0t5o@group.calendar.google.com",
-        className:"rmc-alumni-events"
+        googleCalendarId:
+          "rocky.edu_87pj63gjv6cri8t2glk5aa0t5o@group.calendar.google.com",
+        className: "rmc-alumni-events"
       }
     ],
     defaultView: "dayGridMonth",
     header: {
       left: "",
-      center: "title",
-        // right: "dayGridMonth,dayGridWeek,dayGridDay,listWeek"
+      center: "title"
+      // right: "dayGridMonth,dayGridWeek,dayGridDay,listWeek"
     },
     // TRYING CHECKBOX THINGS
     //   eventRender: function(event, element) {
@@ -75,9 +78,9 @@ document.addEventListener("DOMContentLoaded", function() {
       // console.log(info.el.className);
       let theClassNames = info.el.className;
       // console.log(theClassNames);
-      const found = desiredViews.some(r=> theClassNames.includes(r))
+      const found = desiredViews.some(r => theClassNames.includes(r));
       // console.log(found);
-      return found
+      return found;
       // const found = info.el.className.some(r=> desiredViews.includes(r))
       // console.log(found);
       // if (info.el.classname.some(r=> desiredViews.includes(r))) {return true} else return false
@@ -89,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
       let theLocation, theDescription, theTitle, startTime, endTime;
       // A series of if statements to ensure that if an event doesn't have some particular info (like description or location) it doesn't get rendered as undefined
       if (info.event.extendedProps.location) {
-        theLocation = `LOCATION: ${info.event.extendedProps.location}`
+        theLocation = `LOCATION: ${info.event.extendedProps.location}`;
       } else {
         theLocation = "";
       }
@@ -114,9 +117,7 @@ document.addEventListener("DOMContentLoaded", function() {
       } else endTime = "";
       let theURL = info.event.url;
       modal.setContent(
-        `<h3>${
-          theTitle
-        }</h3><p>${startTime}${endTime}</p><p>${theLocation}</p><p>${theDescription}</p><p><a href="${theURL}" target="_blank">More Information</a></p>`
+        `<h3>${theTitle}</h3><p>${startTime}${endTime}</p><p>${theLocation}</p><p>${theDescription}</p><p><a href="${theURL}" target="_blank">More Information</a></p>`
       );
 
       modal.open();
@@ -126,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   calendar.render();
-  
+
   $("input[class=event_filter_box]").change(function() {
     // $('#calendar').fullCalendar('rerenderEvents');
     calendar.rerenderEvents();
@@ -137,37 +138,55 @@ document.addEventListener("DOMContentLoaded", function() {
   let oldView = "";
 
   $("#cal-month").click(function() {
+    $("#cal-month").addClass("active");
+    removeClass(calendar.view.view.type);
     oldView = calendar.view.view.type;
     calendar.changeView("dayGridMonth");
     console.log(calendar.view.view.type);
     currentView = calendar.view.view.type;
-    $("#cal-month").addClass("active")
-    });
+  });
 
-    $("#cal-week").click(function() {
-      oldView = calendar.view.view.type;
-      calendar.changeView("dayGridWeek");
-      console.log(calendar.view.view.type);
-      currentView = calendar.view.view.type;
-      $("#cal-week").addClass("active")
-      });
-   
+  $("#cal-week").click(function() {
+    $("#cal-week").addClass("active");
+    removeClass(calendar.view.view.type);
+    oldView = calendar.view.view.type;
+    calendar.changeView("dayGridWeek");
+    console.log(calendar.view.view.type);
+    currentView = calendar.view.view.type;
+  });
 
   $("#cal-day").click(function() {
+    $("#cal-day").addClass("active");
+    removeClass(calendar.view.view.type);
     oldView = calendar.view.view.type;
-  calendar.changeView("dayGrid");
-  console.log(calendar.view.view.type)
-  currentView = calendar.view.view.type;
-  $("#cal-day").addClass("active")
+    calendar.changeView("dayGrid");
+    console.log(calendar.view.view.type);
+    currentView = calendar.view.view.type;
   });
 
   $("#cal-list").click(function() {
-    oldView = calendar.view.view.type;
+    $("#cal-list").addClass("active");
+    removeClass(calendar.view.view.type);
     calendar.changeView("listWeek");
     console.log(calendar.view.view.type);
     currentView = calendar.view.view.type;
-    $("#cal-list").addClass("active")
-    });
+  });
+
+  let removeClass = vieww => {
+    console.log(vieww);
+    whatToRemove = "";
+    if (vieww == "dayGridMonth") {
+      whatToRemove = "#cal-month";
+    }
+    if (vieww == "dayGridWeek") {
+      whatToRemove = "#cal-week";
+    }
+    if (vieww == "dayGrid") {
+      whatToRemove = "#cal-day";
+    }
+    if (vieww == "listWeek") {
+      whatToRemove = "#cal-list";
+    }
+    $(whatToRemove).removeClass("active");
+  };
 });
-
-

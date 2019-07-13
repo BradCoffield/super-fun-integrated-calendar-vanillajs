@@ -37,3 +37,11 @@
    border-bottom: 5px solid teal;
    margin-bottom:14px;
  }
+
+ #calendar-nav-ul {
+   padding-left: 0px;
+   list-style-type: none;
+ }
+ #calendar-nav-ul li{
+margin: 7px 0px;
+ }

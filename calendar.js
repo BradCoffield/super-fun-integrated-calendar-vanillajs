@@ -38,9 +38,9 @@ document.addEventListener("DOMContentLoaded", function() {
     ],
     defaultView: "dayGridMonth",
     header: {
-      left: "prev,next,today",
+      left: "",
       center: "title",
-      right: "dayGridMonth,dayGridWeek,dayGridDay,listMonth"
+        // right: "dayGridMonth,dayGridWeek,dayGridDay,listWeek"
     },
     // TRYING CHECKBOX THINGS
     //   eventRender: function(event, element) {
@@ -126,9 +126,22 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   calendar.render();
+  
   $("input[class=event_filter_box]").change(function() {
     // $('#calendar').fullCalendar('rerenderEvents');
     calendar.rerenderEvents();
+  });
+  $("#cal-day").click(function() {
+  calendar.changeView("dayGrid");
+  });
+  $("#cal-list").click(function() {
+  calendar.changeView("listWeek");
+  });
+  $("#cal-month").click(function() {
+  calendar.changeView("dayGridMonth");
+  });
+  $("#cal-week").click(function() {
+  calendar.changeView("dayGridWeek");
   });
 });
 
@@ -137,3 +150,4 @@ $("#g2-toggle").click(function() {
   $(".rmc-student-events").toggle();
   console.log("hiiii");
 });
+

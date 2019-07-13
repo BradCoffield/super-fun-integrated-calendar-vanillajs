@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
       let theClassNames = info.el.className;
       // console.log(theClassNames);
       const found = desiredViews.some(r=> theClassNames.includes(r))
-      console.log(found);
+      // console.log(found);
       return found
       // const found = info.el.className.some(r=> desiredViews.includes(r))
       // console.log(found);
@@ -131,23 +131,43 @@ document.addEventListener("DOMContentLoaded", function() {
     // $('#calendar').fullCalendar('rerenderEvents');
     calendar.rerenderEvents();
   });
-  $("#cal-day").click(function() {
-  calendar.changeView("dayGrid");
-  });
-  $("#cal-list").click(function() {
-  calendar.changeView("listWeek");
-  });
+
+  //stuff for the changing of the view buttons
+  let currentView = calendar.view.view.type;
+  let oldView = "";
+
   $("#cal-month").click(function() {
-  calendar.changeView("dayGridMonth");
+    oldView = calendar.view.view.type;
+    calendar.changeView("dayGridMonth");
+    console.log(calendar.view.view.type);
+    currentView = calendar.view.view.type;
+    $("#cal-month").addClass("active")
+    });
+
+    $("#cal-week").click(function() {
+      oldView = calendar.view.view.type;
+      calendar.changeView("dayGridWeek");
+      console.log(calendar.view.view.type);
+      currentView = calendar.view.view.type;
+      $("#cal-week").addClass("active")
+      });
+   
+
+  $("#cal-day").click(function() {
+    oldView = calendar.view.view.type;
+  calendar.changeView("dayGrid");
+  console.log(calendar.view.view.type)
+  currentView = calendar.view.view.type;
+  $("#cal-day").addClass("active")
   });
-  $("#cal-week").click(function() {
-  calendar.changeView("dayGridWeek");
-  });
+
+  $("#cal-list").click(function() {
+    oldView = calendar.view.view.type;
+    calendar.changeView("listWeek");
+    console.log(calendar.view.view.type);
+    currentView = calendar.view.view.type;
+    $("#cal-list").addClass("active")
+    });
 });
 
-//Well, this works with jquery...
-$("#g2-toggle").click(function() {
-  $(".rmc-student-events").toggle();
-  console.log("hiiii");
-});
 

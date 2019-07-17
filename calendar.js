@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
     //     return displayEvent;
     // },
     eventRender: function(info) {
+     
       let desiredViews = [];
       if ($("#rmc-student-events").is(":checked")) {
         desiredViews.push("rmc-student-events");
@@ -86,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
       // if (info.el.classname.some(r=> desiredViews.includes(r))) {return true} else return false
       // if (info.el.className.includes(desiredViews[0])) return false;
     },
+    
     /* What happens when someone clicks a particular event. In this case, open a modal with additional information about the event. */
     eventClick: function(info) {
       console.log(info.event);
@@ -127,6 +129,18 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   calendar.render();
+
+  //checking for small screen on load and serving list if small and month otherwise
+  if (window.innerWidth >= 768 ) {
+    // $('#calendar').fullCalendar('changeView', 'agendaDay');
+    calendar.changeView('dayGridMonth')
+
+} else {
+    // $('#calendar').fullCalendar('changeView', 'month');
+    calendar.changeView('listWeek')
+
+}
+
 
   $("input[class=event_filter_box]").change(function() {
     // $('#calendar').fullCalendar('rerenderEvents');
@@ -190,3 +204,4 @@ document.addEventListener("DOMContentLoaded", function() {
     $(whatToRemove).removeClass("active");
   };
 });
+

@@ -30,21 +30,31 @@
                     <li><button class="calendar-navigation btn btn-default btn-block" id="cal-list">List</button></li>
                 </ul>
                 <h3>Available Calendars</h3>
+                <button class="available-calendar-btn btn btn-default btn-block">Master Calendar</button>
+                <button class="available-calendar-btn btn btn-default btn-block">Student Events</button>
+                <button class="available-calendar-btn btn btn-default btn-block">Alumni Events</button>
                     <div id="rmc-master-calendar-div">
-                            <input id="rmc-master-calendar" class="event_filter_box" name="event_filter_select" type="checkbox"
-                                value="rmc-master-calendar" checked> RMC MASTER CALENDAR</input>
+                            <label>
+                                <input id="rmc-master-calendar" class="event_filter_box" name="event_filter_select" type="checkbox"
+                                    value="rmc-master-calendar" checked> RMC MASTER CALENDAR</input>
+                            </label>
+                               
                         </div>
                
                
                
                 <div id="rmc-student-events-div">
-                    <input id="rmc-student-events" class="event_filter_box" name="event_filter_select" type="checkbox"
-                    value="rmc-student-events" checked> STUDENT EVENTS</input>
+                    <label>
+                        <input id="rmc-student-events" class="event_filter_box" name="event_filter_select" type="checkbox"
+                        value="rmc-student-events" checked> STUDENT EVENTS</input>
+                    </label>
                 </div>
            
             <div id="rmc-alumni-events-div">
-                <input id="rmc-alumni-events" class="event_filter_box" name="event_filter_select" type="checkbox"
-                    value="rmc-alumni-events" checked> ALUMNI EVENTS</input>
+                <label>
+                    <input id="rmc-alumni-events" class="event_filter_box" name="event_filter_select" type="checkbox"
+                        value="rmc-alumni-events" checked> ALUMNI EVENTS</input>
+                </label>
             
             </div></div>
             <div class="col-md-9">    <div id="calendar"></div></div>

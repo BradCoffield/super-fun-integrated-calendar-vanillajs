@@ -24,19 +24,19 @@
  }
 
  .rmc-master-calendar {
-   background: brown;
+   background: brown!important;
  }
- #rmc-master-calendar-div {
+ /* #rmc-master-calendar-div {
    border-bottom: 5px solid brown;
    margin-bottom: 14px;
- }
+ } */
  .rmc-alumni-events {
-   background: teal;    
+   background: teal!important;    
  }
- #rmc-alumni-events-div{
+ /* #rmc-alumni-events-div{
    border-bottom: 5px solid teal;
    margin-bottom:14px;
- }
+ } */
 
  #calendar-nav-ul {
    padding-left: 0px;
@@ -44,4 +44,8 @@
  }
  #calendar-nav-ul li{
 margin: 7px 0px;
+ }
+
+ #rmc-master-calendar{
+   border:1px solid brown!important
  }

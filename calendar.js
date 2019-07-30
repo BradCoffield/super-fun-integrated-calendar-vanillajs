@@ -14,6 +14,12 @@ document.addEventListener("DOMContentLoaded", function() {
       modal.close();
     }
   );
+  
+  //This line drives what calendars are displayed, tied into eventRender method and a watcher for the buttons. Should start with all that want displayed on-load
+  //the strings here correspond to the className given to the calendar source in eventSources
+  desiredViews = [ "rmc-student-events","rmc-alumni-events", "rmc-master-calendar"];
+  console.log(desiredViews);
+
 
   var calendarEl = document.getElementById("calendar");
 
@@ -45,42 +51,26 @@ document.addEventListener("DOMContentLoaded", function() {
       center: "title"
       // right: "dayGridMonth,dayGridWeek,dayGridDay,listWeek"
     },
-    // TRYING CHECKBOX THINGS
-    //   eventRender: function(event, element) {
-    //     // Array that will store accepted classes
-    //     var eventAcceptedClasses = [];
-    //     if ($('.daytime-events-checkbox').is(':checked')){
-    //         eventAcceptedClasses.push('daytime-events');
-    //     }
-    //     if ($('.nighttime-events-checkbox').is(':checked')){
-    //         eventAcceptedClasses.push('nighttime-events');
-    //     }
-    //     displayEvent = false;
-    //     event.className.forEach(function(element){
-    //         if ($.inArray(element, eventAcceptedClasses) != -1){
-    //             displayEvent = true;
-    //         }
-    //     });
-    //     return displayEvent;
-    // },
+   
     eventRender: function(info) {
      
-      let desiredViews = [];
-      if ($("#rmc-student-events").is(":checked")) {
-        desiredViews.push("rmc-student-events");
-      }
-      if ($("#rmc-master-calendar").is(":checked")) {
-        desiredViews.push("rmc-master-calendar");
-      }
-      if ($("#rmc-alumni-events").is(":checked")) {
-        desiredViews.push("rmc-alumni-events");
-      }
+     
+      // if ($("#rmc-student-events").is(":checked")) {
+      //   desiredViews.push("rmc-student-events");
+      // }
+      // if ($("#rmc-master-calendar").is(":checked")) {
+      //   desiredViews.push("rmc-master-calendar");
+      // }
+      // if ($("#rmc-alumni-events").is(":checked")) {
+      //   desiredViews.push("rmc-alumni-events");
+      // }
 
       // console.log(info.el.className);
       let theClassNames = info.el.className;
       // console.log(theClassNames);
       const found = desiredViews.some(r => theClassNames.includes(r));
-      // console.log(found);
+      // const found = desiredViews;
+      console.log(found);
       return found;
       // const found = info.el.className.some(r=> desiredViews.includes(r))
       // console.log(found);
@@ -131,15 +121,40 @@ document.addEventListener("DOMContentLoaded", function() {
   calendar.render();
 
   //checking for small screen on load and serving list if small and month otherwise
-  if (window.innerWidth >= 768 ) {
-    // $('#calendar').fullCalendar('changeView', 'agendaDay');
-    calendar.changeView('dayGridMonth')
+  if (window.innerWidth >= 768 ) {calendar.changeView('dayGridMonth')} else {calendar.changeView('listMonth')}
 
-} else {
-    // $('#calendar').fullCalendar('changeView', 'month');
-    calendar.changeView('listWeek')
 
-}
+//calendar source buttons
+$("#rmc-master-calendar").click(function(){
+  console.log('master calendar clicked');
+  $("#rmc-master-calendar").toggleClass("active");
+  if (desiredViews.includes("rmc-master-calendar")) {
+    desiredViews.splice(desiredViews.indexOf("rmc-master-calendar"),1);
+    calendar.rerenderEvents();
+  }
+  else {desiredViews.push("rmc-master-calendar"); calendar.rerenderEvents();}
+});
+$("#rmc-student-events").click(function(){
+  console.log('student events clicked');
+  $("#rmc-student-events").toggleClass("active");
+  if (desiredViews.includes("rmc-student-events")) {
+    desiredViews.splice(desiredViews.indexOf("rmc-student-events"),1);
+    console.log(desiredViews)
+    calendar.rerenderEvents();
+  }
+  else {desiredViews.push("rmc-student-events");console.log(desiredViews); calendar.rerenderEvents();}
+});
+$("#rmc-alumni-events").click(function(){
+  console.log("alumni clicked")
+  $("#rmc-alumni-events").toggleClass("active");
+  if (desiredViews.includes("rmc-alumni-events")) {
+    console.log("here we be");
+    desiredViews.splice(desiredViews.indexOf("rmc-alumni-events"),1);
+    console.log(",ehh",desiredViews)
+    calendar.rerenderEvents();
+  }
+  else {desiredViews.push("rmc-alumni-events");console.log(desiredViews); calendar.rerenderEvents();}
+})
 
 
   $("input[class=event_filter_box]").change(function() {

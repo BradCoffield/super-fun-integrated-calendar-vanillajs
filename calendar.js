@@ -121,22 +121,22 @@ document.addEventListener("DOMContentLoaded", function() {
   calendar.render();
 
   //checking for small screen on load and serving list if small and month otherwise
-  if (window.innerWidth >= 768 ) {calendar.changeView('dayGridMonth')} else {calendar.changeView('listMonth')}
+  if (window.innerWidth >= 768 ) {calendar.changeView('dayGridMonth')} else {calendar.changeView('listMonth');$("#cal-list").addClass("active");}
 
 
 //calendar source buttons
-$("#rmc-master-calendar").click(function(){
+$("#rmc-master-calendar-button").click(function(){
   console.log('master calendar clicked');
-  $("#rmc-master-calendar").toggleClass("active");
+  $("#rmc-master-calendar-button").toggleClass("active");
   if (desiredViews.includes("rmc-master-calendar")) {
     desiredViews.splice(desiredViews.indexOf("rmc-master-calendar"),1);
     calendar.rerenderEvents();
   }
   else {desiredViews.push("rmc-master-calendar"); calendar.rerenderEvents();}
 });
-$("#rmc-student-events").click(function(){
+$("#rmc-student-events-button").click(function(){
   console.log('student events clicked');
-  $("#rmc-student-events").toggleClass("active");
+  $("#rmc-student-events-button").toggleClass("active");
   if (desiredViews.includes("rmc-student-events")) {
     desiredViews.splice(desiredViews.indexOf("rmc-student-events"),1);
     console.log(desiredViews)
@@ -144,9 +144,9 @@ $("#rmc-student-events").click(function(){
   }
   else {desiredViews.push("rmc-student-events");console.log(desiredViews); calendar.rerenderEvents();}
 });
-$("#rmc-alumni-events").click(function(){
+$("#rmc-alumni-events-button").click(function(){
   console.log("alumni clicked")
-  $("#rmc-alumni-events").toggleClass("active");
+  $("#rmc-alumni-events-button").toggleClass("active");
   if (desiredViews.includes("rmc-alumni-events")) {
     console.log("here we be");
     desiredViews.splice(desiredViews.indexOf("rmc-alumni-events"),1);
@@ -165,6 +165,16 @@ $("#rmc-alumni-events").click(function(){
   //stuff for the changing of the view buttons
   let currentView = calendar.view.view.type;
   let oldView = "";
+
+  //this here selects the button of the view thats displayed on page load
+  $(document).ready(function() {
+    console.log(currentView);
+    if (currentView == "dayGridMonth"){$("#cal-month").addClass("active");}
+    if (currentView == "dayGridWeek"){$("#cal-week").addClass("active");}
+    if (currentView == "dayGrid"){$("#cal-day").addClass("active");}
+    if (currentView == "listWeek"){$("#cal-list").addClass("active");}
+    
+});
 
   $("#cal-month").click(function() {
     $("#cal-month").addClass("active");

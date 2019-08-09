@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     ],
     defaultView: "dayGridMonth",
+    nowIndicator: true,
     header: {
       left: "",
       center: "title"

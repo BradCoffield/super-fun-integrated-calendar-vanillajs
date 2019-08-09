@@ -15,11 +15,17 @@
   } */
 
  .rmc-student-events{
-   background:green;
+   /* background:green; */
+   background: white!important;
+   border-left: 10px solid green;
+   color: black;
  }
 
  .rmc-master-calendar {
-   background: brown!important;
+   /* background: brown!important; */
+   background: white!important;
+   border-left: 10px solid brown;
+   color: black;
  }
  
  .rmc-alumni-events {
@@ -64,4 +70,42 @@ margin: 7px 0px;
 	color: #333;
 	background-color: #d4d4d4!important;
 	border-color: #8c8c8c;
+}
+
+/* Messing around with actual calendar defaults */
+.fc-day-top,  {
+  height: 18px;
+  max-height: 18px;
+}
+.fc-day-number {
+  font-size: 16px;
+}
+.fc-day-header{
+  height:22px;
+  font-size: 18px;
+}
+.fc-title {
+  font-size: 14px;
+  padding: 5px;
+}
+.fc-event:hover, .fc-event:focus {
+  color:black;
+  background:#999!important;
+}
+.fc-day-top {
+  background: rgb(238, 230, 231)!important;
+}
+.fc-list-item-title {font-size: 16px;padding:10px 0px;}
+
+.fc-event-dot {
+  display:none;
+}
+.fc-time {
+  color: #555;
+}
+ 
+.fc-day-grid-event {
+  padding: 5px !important;
+  text-overflow: ellipsis;
+  white-space: pre-line;
 }

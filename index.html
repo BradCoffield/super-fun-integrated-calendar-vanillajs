@@ -29,7 +29,8 @@ display:none;} and to figure out a way to deal with those FUCKING BEFORES ARGH -
         <div class="bodyContent container"  >
             <div class="row">
               <!-- Changes to the buttons require matching changes to the section just below, they need to match except for the visibility classes -->
-                <div class="col-md-2 mbEh hidden-xs hidden-sm"> 
+                <div class="col-md-2 mbEh "> 
+                <!-- <div class="col-md-2 mbEh hidden-xs hidden-sm">  -->
                     <h3>
                         Calendar Views
                     </h3>
@@ -49,9 +50,9 @@ display:none;} and to figure out a way to deal with those FUCKING BEFORES ARGH -
                  
             </div>
             <!-- Hi, this is the section I'm referring to above. -->
-            <div class="col-md-2 mbEh hidden-md hidden-lg">
+            <!-- <div class="col-md-2 mbEh hidden-md hidden-lg">
                 hi i'm only visible on small screens    
-            </div>
+            </div> -->
 
                 <div class="col-md-10">    <div id="calendar"></div></div>
             </div>
@@ -72,6 +73,7 @@ display:none;} and to figure out a way to deal with those FUCKING BEFORES ARGH -
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://momentjs.com/downloads/moment.js"></script>
 
     <!--COMBINED ALL THESE INTO FULLCALENDAR.JS BC UNPKG IS SLOW
          <script src="https://unpkg.com/@fullcalendar/core/main.min.js"></script>
@@ -82,6 +84,7 @@ display:none;} and to figure out a way to deal with those FUCKING BEFORES ARGH -
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.15.1/tingle.min.js"></script>
 <script src="fullcalendar.js"></script>
+<script src="https://unpkg.com/@fullcalendar/moment/main.min.js"></script>
     <script src="calendar.js"></script>
 </body>
 

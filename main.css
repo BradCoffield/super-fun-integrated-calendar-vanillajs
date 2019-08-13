@@ -1,109 +1,138 @@
-/* .swal-footer {
-    background-color: #806f3f;
-    margin-top: 32px;
-    border-top: 1px solid #E9EEF1;
-    overflow: hidden;
-  } */
+.btn-default.active {
+  background: rgb(245, 245, 241);
+}
 
-  /* .swal-button {
-    padding: 7px 19px;
-    border-radius: 2px;
-    background-color: #4962B3;
-    font-size: 12px;
-    border: 1px solid #3e549a;
-    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
-  } */
 
- .rmc-student-events{
-   /* background:green; */
-   background: white!important;
-   border-left: 10px solid green;
-   color: black;
- }
+/* Buttons atop the calendar */
+.fc-button-primary:disabled {
+  color: #fff;
+  background-color: #416131;
+  border-color: #416131;
+}
+.fc-button-primary {
+  color: #fff;
+  background-color: #416131;
+  border-color: #416131;
+}
+.fc-button:hover,
+.fc-button:focus {
+  background: #0e572d;
+  border: 1px solid #333;
+}
 
- .rmc-master-calendar {
-   /* background: brown!important; */
-   background: white!important;
-   border-left: 10px solid brown;
-   color: black;
- }
- 
- .rmc-alumni-events {
-   background: teal!important;    
- }
+/* Modal styles */
+.tingle-btn--primary {
+  background-color: #4b8741;
+}
 
- #rmc-master-calendar-button{
-  border:1px solid brown!important;
-  border-left: 10px solid brown!important;
+.tingle-modal a {
+  color: #00582c;
+  text-decoration: underline;
+}
+.tingle-modal-box__footer{
+  background-color: lightgray;
+}
+
+
+.rmc-student-events {
+  /* background:green; */
+  background: white !important;
+  border-left: 10px solid #416131;
+  color: black;
+}
+
+.rmc-master-calendar {
+  /* background: brown!important; */
+  background: white !important;
+  border-left: 10px solid #d0e3b0;
+  color: black;
+}
+
+.rmc-alumni-events {
+  background: #d0a136 !important;
+}
+
+#rmc-master-calendar-button {
+  border: 1px solid #d0e3b0 !important;
+  border-left: 10px solid #d0e3b0 !important;
 }
 #rmc-student-events-button {
-  border: 1px solid green!important;
-  border-left: 10px solid green!important;
+  border: 1px solid #416131 !important;
+  border-left: 10px solid #416131 !important;
 }
- #rmc-alumni-events-button{
-   border: 1px solid teal!important;
-   border-left: 10px solid teal!important;
- }
+#rmc-alumni-events-button {
+  border: 1px solid #d0a136 !important;
+  border-left: 10px solid #d0a136 !important;
+}
 
- #calendar-nav-ul {
-   padding-left: 0px;
-   list-style-type: none;
- }
- #calendar-nav-ul li{
-margin: 7px 0px;
- }
+#calendar-nav-ul {
+  padding-left: 0px;
+  list-style-type: none;
+}
+#calendar-nav-ul li {
+  margin: 7px 0px;
+}
 
-
-
- .mbEh {
-   margin-bottom: 4rem;
- }
+.mbEh {
+  margin-bottom: 4rem;
+}
 
 /* for when click source butons can tell clicked */
 /* .btn-default.focus, .btn-default:focus{ */
-  .available-calendar-btn:focus {
-  background: white!important;
+.available-calendar-btn:focus {
+  background: white !important;
 }
 
-
-.btn-default.active.focus, .btn-default.active:focus, .btn-default.active:hover, .btn-default:active.focus, .btn-default:active:focus, .btn-default:active:hover, .open > .dropdown-toggle.btn-default.focus, .open > .dropdown-toggle.btn-default:focus, .open > .dropdown-toggle.btn-default:hover {
-	color: #333;
-	background-color: #d4d4d4!important;
-	border-color: #8c8c8c;
+.btn-default.active.focus,
+.btn-default.active:focus,
+.btn-default.active:hover,
+.btn-default:active.focus,
+.btn-default:active:focus,
+.btn-default:active:hover,
+.open > .dropdown-toggle.btn-default.focus,
+.open > .dropdown-toggle.btn-default:focus,
+.open > .dropdown-toggle.btn-default:hover {
+  color: #333;
+  background-color: #d4d4d4 !important;
+  border-color: #8c8c8c;
 }
 
 /* Messing around with actual calendar defaults */
-.fc-day-top,  {
+.fc-day-top {
   height: 18px;
   max-height: 18px;
 }
 .fc-day-number {
   font-size: 16px;
 }
-.fc-day-header{
-  height:22px;
+.fc-day-header {
+  height: 22px;
   font-size: 18px;
 }
 .fc-title {
   font-size: 14px;
   padding: 5px;
 }
-.fc-event:hover, .fc-event:focus {
-  color:black;
-  background:#999!important;
+.fc-event:hover,
+.fc-event:focus {
+  color: black;
+  background: #999 !important;
 }
 .fc-day-top {
-  background: rgb(238, 230, 231)!important;
+  background: rgb(238, 230, 231) !important;
 }
-.fc-list-item-title {font-size: 16px;padding:10px 0px;}
+.fc-list-item-title {
+  font-size: 16px;
+  padding: 10px 0px;
+}
 
 .fc-event-dot {
-  display:none;
+  display: none;
 }
 .fc-time {
   color: #555;
 }
- 
+
 .fc-day-grid-event {
   padding: 5px !important;
   text-overflow: ellipsis;

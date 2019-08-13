@@ -24,7 +24,9 @@ document.addEventListener("DOMContentLoaded", function() {
   var calendarEl = document.getElementById("calendar");
 
   var calendar = new FullCalendar.Calendar(calendarEl, {
-    plugins: ["dayGrid", "googleCalendar", "list"],
+    plugins: ["dayGrid", "googleCalendar", "list", "momentPlugin"],
+    
+    // titleFormat: '{MMMM {D}}, YYYY',
     googleCalendarApiKey: "AIzaSyCqfo0l4nCGE2FLGgnXxKDv6SJVPLund4Q",
     // googleCalendarApiKey: "AIzaSyAm6_e7XOpN1lB0cSUA3Ij8vsPdHAfznoU", //g2
     /* this is where we put all the source calendars information, as a series of objects */
@@ -81,6 +83,13 @@ document.addEventListener("DOMContentLoaded", function() {
     
     /* What happens when someone clicks a particular event. In this case, open a modal with additional information about the event. */
     eventClick: function(info) {
+      let timeConvert = (arg)=>{
+        let m = FullCalendarMoment.toMoment(arg, calendar);
+        console.log("Converte!", m.format("HH:mmA"))
+        return m.format("ddd, MMM Do h:mmA");
+      }
+      // timeConvert(info.event.start)
+     
       console.log(info.event);
       let theLocation, theDescription, theTitle, startTime, endTime;
       // A series of if statements to ensure that if an event doesn't have some particular info (like description or location) it doesn't get rendered as undefined
@@ -101,12 +110,12 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       //Don't need start/end times if it is an all day event
       if (info.event.start && info.event.allDay == false) {
-        startTime = `TIME: ${info.event.start} - `;
+        startTime = `TIME: ${timeConvert(info.event.start)} - `;
       } else {
         startTime = "";
       }
       if (info.event.end && info.event.allDay == false) {
-        endTime = info.event.end;
+        endTime = `${timeConvert(info.event.end)}`;
       } else endTime = "";
       let theURL = info.event.url;
       modal.setContent(

@@ -33,6 +33,10 @@
   background-color: lightgray;
 }
 
+.tingle-modal__close{
+  display:none;
+}
+
 
 .rmc-student-events {
   /* background:green; */
@@ -49,7 +53,15 @@
 }
 
 .rmc-alumni-events {
-  background: #d0a136 !important;
+  background: white !important;
+  border-left: 10px solid #806f3f !important;
+  color: black;
+}
+
+.rmc-athletics {
+  background: white !important;
+  border-left:10px solid #d0a136 !important;
+  color: black;
 }
 
 #rmc-master-calendar-button {
@@ -61,6 +73,10 @@
   border-left: 10px solid #416131 !important;
 }
 #rmc-alumni-events-button {
+  border: 1px solid #806f3f !important;
+  border-left: 10px solid #806f3f !important;
+}
+#rmc-athletics-events-button {
   border: 1px solid #d0a136 !important;
   border-left: 10px solid #d0a136 !important;
 }
@@ -119,7 +135,7 @@
   background: #999 !important;
 }
 .fc-day-top {
-  background: rgb(238, 230, 231) !important;
+  background: rgb(243, 243, 243) !important;
 }
 .fc-list-item-title {
   font-size: 16px;

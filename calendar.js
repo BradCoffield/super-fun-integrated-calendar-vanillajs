@@ -21,7 +21,25 @@ document.addEventListener("DOMContentLoaded", function() {
     "rmc-student-events",
     "rmc-alumni-events",
     "rmc-master-calendar",
-    "rmc-athletics"
+    "rmc-athletics",
+    "rmc-athletics-jv-mens-basketball",
+    "rmc-athletics-mens-basketball",
+    "rmc-athletics-womens-basketball",
+    "rmc-athletics-jv-womens-basketball",
+    "rmc-athletics-cross-country",
+    "rmc-athletics-mens-cross-country",
+    "rmc-athletics-football",
+    "rmc-athletics-mens-golf",
+    "rmc-athletics-womens-golf",
+    "rmc-athletics-mens-ski-racing",
+    "rmc-athletics-ski-racing",
+    "rmc-athletics-womens-ski-racing",
+    "rmc-athletics-mens-soccer",
+    "rmc-athletics-womens-soccer",
+    "rmc-athletics-mens-track-and-field",
+    "rmc-athletics-womens-track-and-field",
+    "rmc-athletics-volleyball",
+    "rmc-athletics-cheerleading"
   ];
   console.log(desiredViews);
 
@@ -40,11 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
           "rocky.edu_sakv6bmfg59lf2dp3a8ogj1608@group.calendar.google.com",
         className: "rmc-student-events"
       },
-      {
-        googleCalendarId:
-          "r1a42hmoaun7m0oplppkhkmrpj4m7jmd@import.calendar.google.com",
-        className: "rmc-athletics"
-      },
+
       {
         googleCalendarId:
           "rocky.edu_2gbenc7go3t1k90k0m3utq7g4o@group.calendar.google.com",
@@ -54,6 +68,101 @@ document.addEventListener("DOMContentLoaded", function() {
         googleCalendarId:
           "rocky.edu_87pj63gjv6cri8t2glk5aa0t5o@group.calendar.google.com",
         className: "rmc-alumni-events"
+      },
+      {
+        googleCalendarId:
+          "r1a42hmoaun7m0oplppkhkmrpj4m7jmd@import.calendar.google.com",
+        className: "rmc-athletics"
+      },
+      {
+        googleCalendarId:
+          "oi9hl6saj8n35lv8m0pa16ssfr7ebrd8@import.calendar.google.com",
+        className: "rmc-athletics-jv-mens-basketball"
+      },
+      {
+        googleCalendarId:
+          "4v339r9s3h3niisfiqglbsjfm4vrnagn@import.calendar.google.com",
+        className: "rmc-athletics-mens-basketball"
+      },
+      {
+        googleCalendarId:
+          "ks30461f7jbhqnj0d9lfdju52dcehacu@import.calendar.google.com",
+        className: "rmc-athletics-womens-basketball"
+      },
+      {
+        googleCalendarId:
+          "gll9u0l40u9k81hnov2hv4i9mu7tvkae@import.calendar.google.com",
+        className: "rmc-athletics-jv-womens-basketball"
+      },
+      {
+        googleCalendarId:
+          "5tsd3v22ik9qakrroof21orjac1s39l0@import.calendar.google.com",
+        className: "rmc-athletics-cross-country"
+      },
+      {
+        googleCalendarId:
+          "qp7t3eelino9ilefqdhvdduq5jpqm5g4@import.calendar.google.com",
+        className: "rmc-athletics-mens-cross-country"
+      },
+      {
+        googleCalendarId:
+          "1hn28nug8ricjvg9330elbc0p6itohct@import.calendar.google.com",
+        className: "rmc-athletics-football"
+      },
+      {
+        googleCalendarId:
+          "st10qn7366v6csgljdj4ssfqd6g6hljg@import.calendar.google.com",
+        className: "rmc-athletics-mens-golf"
+      },
+      {
+        googleCalendarId:
+          "oqu3g83n3iil8a0svkj36scve25htk5n@import.calendar.google.com",
+        className: "rmc-athletics-womens-golf"
+      },
+      {
+        googleCalendarId:
+          "qnsn4kvkmjelvna2rdrfn50h1j2eg5d3@import.calendar.google.com",
+        className: "rmc-athletics-mens-ski-racing"
+      },
+      {
+        googleCalendarId:
+          "dgh2blpl1r3pmim2j7e6njmc9h95eq1v@import.calendar.google.com",
+        className: "rmc-athletics-ski-racing"
+      },
+      {
+        googleCalendarId:
+          "fdcr2mr3a8b7e014s19rdg5cd1torqb6@import.calendar.google.com",
+        className: "rmc-athletics-womens-ski-racing"
+      },
+      {
+        googleCalendarId:
+          "ll761ilg8va9jpji57buc2edl6mhf1q0@import.calendar.google.com",
+        className: "rmc-athletics-mens-soccer"
+      },
+      {
+        googleCalendarId:
+          "771tkmsvlut9ja8lppug3ccv1l7r1ba7@import.calendar.google.com",
+        className: "rmc-athletics-womens-soccer"
+      },
+      {
+        googleCalendarId:
+          "48dudds8id4pnfh6odteebmo46pe97vf@import.calendar.google.com",
+        className: "rmc-athletics-mens-track-and-field"
+      },
+      {
+        googleCalendarId:
+          "9n02j1fp5a400t836v5v4v6oasc0sdhf@import.calendar.google.com",
+        className: "rmc-athletics-womens-track-and-field"
+      },
+      {
+        googleCalendarId:
+          "jtfgklsot0ucckvfqlp4v6tv3vlsn37j@import.calendar.google.com",
+        className: "rmc-athletics-volleyball"
+      },
+      {
+        googleCalendarId:
+          "vf7anj1mjqfah0l3vidgk7f13sg4nafp@import.calendar.google.com",
+        className: "rmc-athletics-cheerleading"
       }
     ],
     defaultView: "dayGridMonth",
@@ -65,27 +174,9 @@ document.addEventListener("DOMContentLoaded", function() {
     },
 
     eventRender: function(info) {
-      // if ($("#rmc-student-events").is(":checked")) {
-      //   desiredViews.push("rmc-student-events");
-      // }
-      // if ($("#rmc-master-calendar").is(":checked")) {
-      //   desiredViews.push("rmc-master-calendar");
-      // }
-      // if ($("#rmc-alumni-events").is(":checked")) {
-      //   desiredViews.push("rmc-alumni-events");
-      // }
-
-      // console.log(info.el.className);
       let theClassNames = info.el.className;
-      // console.log(theClassNames);
       const found = desiredViews.some(r => theClassNames.includes(r));
-      // const found = desiredViews;
-      console.log(found);
       return found;
-      // const found = info.el.className.some(r=> desiredViews.includes(r))
-      // console.log(found);
-      // if (info.el.classname.some(r=> desiredViews.includes(r))) {return true} else return false
-      // if (info.el.className.includes(desiredViews[0])) return false;
     },
 
     /* What happens when someone clicks a particular event. In this case, open a modal with additional information about the event. */
@@ -93,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function() {
     eventClick: function(info) {
       let timeConvert = arg => {
         let m = FullCalendarMoment.toMoment(arg, calendar);
-        console.log("Converte!", m.format("HH:mmA"));
+        // console.log("Converte!", m.format("HH:mmA"));
         return m.format("ddd, MMM Do h:mmA");
       };
       let theLocation, theDescription, theTitle, startTime, endTime;
@@ -143,7 +234,9 @@ document.addEventListener("DOMContentLoaded", function() {
     $("#cal-list").addClass("active");
   }
 
-  //calendar source buttons
+  /* calendar source buttons
+   */
+
   $("#rmc-master-calendar-button").click(function() {
     console.log("master calendar clicked");
     $("#rmc-master-calendar-button").toggleClass("active");
@@ -179,7 +272,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
   $("#rmc-alumni-events-button").click(function() {
-    console.log("alumni clicked");
     $("#rmc-alumni-events-button").toggleClass("active");
     if (desiredViews.includes("rmc-alumni-events")) {
       console.log("here we be");
@@ -193,16 +285,178 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
-  $("input[class=event_filter_box]").change(function() {
-    // $('#calendar').fullCalendar('rerenderEvents');
-    calendar.rerenderEvents();
+  $("#rmc-athletics-events-womens-basketball-button").click(function() {
+    $("#rmc-athletics-events-womens-basketball-button").toggleClass("active");
+    if (
+      desiredViews.includes("rmc-athletics-womens-basketball") &&
+      desiredViews.includes("rmc-athletics-jv-womens-basketball")
+    ) {
+      desiredViews.splice(
+        desiredViews.indexOf("rmc-athletics-womens-basketball"),
+        1
+      );
+      desiredViews.splice(
+        desiredViews.indexOf("rmc-athletics-jv-womens-basketball"),
+        1
+      );
+      calendar.rerenderEvents();
+    } else {
+      desiredViews.push("rmc-athletics-womens-basketball");
+      desiredViews.push("rmc-athletics-jv-womens-basketball");
+      calendar.rerenderEvents();
+    }
   });
 
+  $("#rmc-athletics-events-mens-basketball-button").click(function() {
+    $("#rmc-athletics-events-mens-basketball-button").toggleClass("active");
+    if (
+      desiredViews.includes("rmc-athletics-mens-basketball") &&
+      desiredViews.includes("rmc-athletics-jv-mens-basketball")
+    ) {
+      desiredViews.splice(
+        desiredViews.indexOf("rmc-athletics-mens-basketball"),
+        1
+      );
+      desiredViews.splice(
+        desiredViews.indexOf("rmc-athletics-jv-mens-basketball"),
+        1
+      );
+      calendar.rerenderEvents();
+    } else {
+      desiredViews.push("rmc-athletics-mens-basketball");
+      desiredViews.push("rmc-athletics-jv-mens-basketball");
+      calendar.rerenderEvents();
+    }
+  });
+  $("#rmc-athletics-events-mens-basketball-button").click(function() {
+    $("#rmc-athletics-events-mens-basketball-button").toggleClass("active");
+    if (
+      desiredViews.includes("rmc-athletics-mens-basketball") &&
+      desiredViews.includes("rmc-athletics-jv-mens-basketball")
+    ) {
+      desiredViews.splice(
+        desiredViews.indexOf("rmc-athletics-mens-basketball"),
+        1
+      );
+      desiredViews.splice(
+        desiredViews.indexOf("rmc-athletics-jv-mens-basketball"),
+        1
+      );
+      calendar.rerenderEvents();
+    } else {
+      desiredViews.push("rmc-athletics-mens-basketball");
+      desiredViews.push("rmc-athletics-jv-mens-basketball");
+      calendar.rerenderEvents();
+    }
+  });
+
+
+  $("#rmc-athletics-events-cheerleading-button").click(function() {
+    $("#rmc-athletics-events-cheerleading-button").toggleClass("active");
+    if (desiredViews.includes("rmc-athletics-cheerleading")) {
+      desiredViews.splice(desiredViews.indexOf("rmc-athletics-cheerleading"), 1);
+      calendar.rerenderEvents();
+    } else {
+      desiredViews.push("rmc-athletics-cheerleading");
+      calendar.rerenderEvents();
+    }
+  });
+
+
+  $("#rmc-athletics-events-cross-country-button").click(function() {
+    $("#rmc-athletics-events-cross-country-button").toggleClass("active");
+    if (
+      desiredViews.includes("rmc-athletics-cross-country") &&
+      desiredViews.includes("rmc-athletics-mens-cross-country")
+    ) {
+      desiredViews.splice(
+        desiredViews.indexOf("rmc-athletics-cross-country"),
+        1
+      );
+      desiredViews.splice(
+        desiredViews.indexOf("rmc-athletics-mens-cross-country"),
+        1
+      );
+      calendar.rerenderEvents();
+    } else {
+      desiredViews.push("rmc-athletics-cross-country");
+      desiredViews.push("rmc-athletics-mens-cross-country");
+      calendar.rerenderEvents();
+    }
+  });
+
+  $("#rmc-athletics-events-football-button").click(function() {
+    $("#rmc-athletics-events-football-button").toggleClass("active");
+    if (desiredViews.includes("rmc-athletics-football")) {
+      desiredViews.splice(desiredViews.indexOf("rmc-athletics-football"), 1);
+      calendar.rerenderEvents();
+    } else {
+      desiredViews.push("rmc-athletics-football");
+      calendar.rerenderEvents();
+    }
+  });
+
+  $("#rmc-athletics-events-golf-button").click(function() {
+    $("#rmc-athletics-events-golf-button").toggleClass("active");
+    if (
+      desiredViews.includes("rmc-athletics-mens-golf") &&
+      desiredViews.includes("rmc-athletics-womens-golf")
+    ) {
+      desiredViews.splice(
+        desiredViews.indexOf("rmc-athletics-mens-golf"),
+        1
+      );
+      desiredViews.splice(
+        desiredViews.indexOf("rmc-athletics-womens-golf"),
+        1
+      );
+      calendar.rerenderEvents();
+    } else {
+      desiredViews.push("rmc-athletics-mens-golf");
+      desiredViews.push("rmc-athletics-womens-golf");
+      calendar.rerenderEvents();
+    }
+  });
+  $("#rmc-athletics-events-golf-button").click(function() {
+    $("#rmc-athletics-events-golf-button").toggleClass("active");
+    if (
+      desiredViews.includes("rmc-athletics-mens-ski-racing") &&
+      desiredViews.includes("rmc-athletics-ski-racing") &&
+      desiredViews.includes("rmc-athletics-womens-ski-racing") 
+
+    ) {
+      desiredViews.splice(
+        desiredViews.indexOf("rmc-athletics-mens-ski-racing"),
+        1
+      );
+      desiredViews.splice(
+        desiredViews.indexOf("rmc-athletics-ski-racing"),
+        1
+      );
+      desiredViews.splice(
+        desiredViews.indexOf("rmc-athletics-womens-ski-racing"),
+        1
+      );
+      calendar.rerenderEvents();
+    } else {
+      desiredViews.push("rmc-athletics-mens-ski-racing");
+      desiredViews.push("rmc-athletics-ski-racing");
+      desiredViews.push("rmc-athletics-womens-ski-racing");
+      calendar.rerenderEvents();
+    }
+  });
+
+
+  //   $("input[class=event_filter_box]").change(function() {
+  //     calendar.rerenderEvents();
+  //   });
+
+  /* THE CALENDAR VIEW TYPE BUTTONS */
   //stuff for the changing of the view buttons
   let currentView = calendar.view.view.type;
   let oldView = "";
 
-  //this selects the button of the view thats displayed on page load. So that it's visually represented as active. 
+  //this selects the button of the view thats displayed on page load. So that it's visually represented as active.
   $(document).ready(function() {
     console.log(currentView);
     if (currentView == "dayGridMonth") {

@@ -306,49 +306,29 @@ document.addEventListener("DOMContentLoaded", function() {
       calendar.rerenderEvents();
     }
   });
+  
+  $("#rmc-athletics-events-mens-basketball-button").click(function() {
+    $("#rmc-athletics-events-mens-basketball-button").toggleClass("active");
+    if (
+      desiredViews.includes("rmc-athletics-mens-basketball") &&
+      desiredViews.includes("rmc-athletics-jv-mens-basketball")
+    ) {
+      desiredViews.splice(
+        desiredViews.indexOf("rmc-athletics-mens-basketball"),
+        1
+      );
+      desiredViews.splice(
+        desiredViews.indexOf("rmc-athletics-jv-mens-basketball"),
+        1
+      );
+      calendar.rerenderEvents();
+    } else {
+      desiredViews.push("rmc-athletics-mens-basketball");
+      desiredViews.push("rmc-athletics-jv-mens-basketball");
+      calendar.rerenderEvents();
+    }
+  });
 
-  $("#rmc-athletics-events-mens-basketball-button").click(function() {
-    $("#rmc-athletics-events-mens-basketball-button").toggleClass("active");
-    if (
-      desiredViews.includes("rmc-athletics-mens-basketball") &&
-      desiredViews.includes("rmc-athletics-jv-mens-basketball")
-    ) {
-      desiredViews.splice(
-        desiredViews.indexOf("rmc-athletics-mens-basketball"),
-        1
-      );
-      desiredViews.splice(
-        desiredViews.indexOf("rmc-athletics-jv-mens-basketball"),
-        1
-      );
-      calendar.rerenderEvents();
-    } else {
-      desiredViews.push("rmc-athletics-mens-basketball");
-      desiredViews.push("rmc-athletics-jv-mens-basketball");
-      calendar.rerenderEvents();
-    }
-  });
-  $("#rmc-athletics-events-mens-basketball-button").click(function() {
-    $("#rmc-athletics-events-mens-basketball-button").toggleClass("active");
-    if (
-      desiredViews.includes("rmc-athletics-mens-basketball") &&
-      desiredViews.includes("rmc-athletics-jv-mens-basketball")
-    ) {
-      desiredViews.splice(
-        desiredViews.indexOf("rmc-athletics-mens-basketball"),
-        1
-      );
-      desiredViews.splice(
-        desiredViews.indexOf("rmc-athletics-jv-mens-basketball"),
-        1
-      );
-      calendar.rerenderEvents();
-    } else {
-      desiredViews.push("rmc-athletics-mens-basketball");
-      desiredViews.push("rmc-athletics-jv-mens-basketball");
-      calendar.rerenderEvents();
-    }
-  });
 
 
   $("#rmc-athletics-events-cheerleading-button").click(function() {
@@ -417,8 +397,8 @@ document.addEventListener("DOMContentLoaded", function() {
       calendar.rerenderEvents();
     }
   });
-  $("#rmc-athletics-events-golf-button").click(function() {
-    $("#rmc-athletics-events-golf-button").toggleClass("active");
+  $("#rmc-athletics-events-skiing-button").click(function() {
+    $("#rmc-athletics-events-skiing-button").toggleClass("active");
     if (
       desiredViews.includes("rmc-athletics-mens-ski-racing") &&
       desiredViews.includes("rmc-athletics-ski-racing") &&
@@ -446,6 +426,58 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
+  $("#rmc-athletics-events-mens-soccer-button").click(function() {
+    $("#rmc-athletics-events-mens-soccer-button").toggleClass("active");
+    if (desiredViews.includes("rmc-athletics-mens-soccer")) {
+      desiredViews.splice(desiredViews.indexOf("rmc-athletics-mens-soccer"), 1);
+      calendar.rerenderEvents();
+    } else {
+      desiredViews.push("rmc-athletics-mens-soccer");
+      calendar.rerenderEvents();
+    }
+  });
+  $("#rmc-athletics-events-womens-soccer-button").click(function() {
+    $("#rmc-athletics-events-womens-soccer-button").toggleClass("active");
+    if (desiredViews.includes("rmc-athletics-womens-soccer")) {
+      desiredViews.splice(desiredViews.indexOf("rmc-athletics-womens-soccer"), 1);
+      calendar.rerenderEvents();
+    } else {
+      desiredViews.push("rmc-athletics-womens-soccer");
+      calendar.rerenderEvents();
+    }
+  });
+  $("#rmc-athletics-events-track-button").click(function() {
+    $("#rmc-athletics-events-track-button").toggleClass("active");
+    if (
+      desiredViews.includes("rmc-athletics-mens-track-and-field") &&
+      desiredViews.includes("rmc-athletics-womens-track-and-field")
+    ) {
+      desiredViews.splice(
+        desiredViews.indexOf("rmc-athletics-mens-track-and-field"),
+        1
+      );
+      desiredViews.splice(
+        desiredViews.indexOf("rmc-athletics-womens-track-and-field"),
+        1
+      );
+      calendar.rerenderEvents();
+    } else {
+      desiredViews.push("rmc-athletics-mens-track-and-field");
+      desiredViews.push("rmc-athletics-womens-track-and-field");
+      calendar.rerenderEvents();
+    }
+  });
+
+  $("#rmc-athletics-events-volleyball-button").click(function() {
+    $("#rmc-athletics-events-volleyball-button").toggleClass("active");
+    if (desiredViews.includes("rmc-athletics-volleyball")) {
+      desiredViews.splice(desiredViews.indexOf("rmc-athletics-volleyball"), 1);
+      calendar.rerenderEvents();
+    } else {
+      desiredViews.push("rmc-athletics-volleyball");
+      calendar.rerenderEvents();
+    }
+  });
 
   //   $("input[class=event_filter_box]").change(function() {
   //     calendar.rerenderEvents();

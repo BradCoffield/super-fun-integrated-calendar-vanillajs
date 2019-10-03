@@ -40,7 +40,7 @@
   color: black;
 }
 
-.rmc-athletics {
+.rmc-athletics,.rmc-athletics-jv-mens-basketball,.rmc-athletics-mens-basketball,.rmc-athletics-womens-basketball,.rmc-athletics-jv-womens-basketball,.rmc-athletics-cross-country,.rmc-athletics-mens-cross-country,.rmc-athletics-football,.rmc-athletics-mens-golf,.rmc-athletics-womens-golf,.rmc-athletics-mens-ski-racing,.rmc-athletics-ski-racing,.rmc-athletics-womens-ski-racing,.rmc-athletics-mens-soccer,.rmc-athletics-womens-soccer,.rmc-athletics-mens-track-and-field,.rmc-athletics-womens-track-and-field,.rmc-athletics-volleyball,.rmc-athletics-cheerleading {
   background: white !important;
   border-left: 10px solid #d0a136 !important;
   color: black;
@@ -58,7 +58,7 @@
   border: 1px solid #806f3f !important;
   border-left: 10px solid #806f3f !important;
 }
-#rmc-athletics-events-button {
+#rmc-athletics-events-button,#rmc-athletics-events-womens-basketball-button,#rmc-athletics-events-mens-basketball-button,#rmc-athletics-events-cheerleading-button,#rmc-athletics-events-cross-country-button,#rmc-athletics-events-football-button,#rmc-athletics-events-golf-button,#rmc-athletics-events-skiing-button,#rmc-athletics-events-mens-soccer-button,#rmc-athletics-events-womens-soccer-button,#rmc-athletics-events-track-button,#rmc-athletics-events-volleyball-button {
   border: 1px solid #d0a136 !important;
   border-left: 10px solid #d0a136 !important;
 }
